@@ -1,0 +1,28 @@
+<openerp>
+	<data>
+	
+		<record model="ir.ui.view" id="noname_view_mail_mass_mailing_contact_tree">
+			<field name="name">mail.mass_mailing.contact.tree</field>
+			<field name="model">mail.mass_mailing.contact</field>
+			<field name="inherit_id" ref="mass_mailing.view_mail_mass_mailing_contact_tree" />
+			<field name="arch" type="xml">
+				<field name="name" position="attributes">
+					<attribute name="invisible">1</attribute>
+				</field>
+				<field name="list_id" position="after">
+					<field name="create_uid" string="Source" readonly="1" />
+				</field>
+				
+				<!-- The fields "unsubscribed_by_odoo_user" & "unsubscription_date" must be displayed so that
+					the new function on_change_opt_out() can edit their value in the UI
+					Note: the "on_change" functions can only work in the UI
+				-->
+				<field name="opt_out" position="after">
+					<field name="unsubscription_date" invisible="1"/>
+					<field name="unsubscribed_by_odoo_user" invisible="1" />
+				</field>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+mass_mailing_manager,mass_mailing_manager,mass_mailing.model_mail_mass_mailing,marketing.group_marketing_manager,1,1,1,1
+mass_mailing_list_manager,mass_mailing_list_manager,mass_mailing.model_mail_mass_mailing_list,marketing.group_marketing_manager,1,1,1,1
+mass_mailing_contact_manager,mass_mailing_contact_manager,mass_mailing.model_mail_mass_mailing_contact,marketing.group_marketing_manager,1,1,1,0
+email_template_manager,email_template_manager,email_template.model_email_template,marketing.group_marketing_manager,1,1,1,1
+mass_mailing_user,mass_mailing_user,mass_mailing.model_mail_mass_mailing,marketing.group_marketing_user,1,1,1,0
+mass_mailing_list_user,mass_mailing_list_user,mass_mailing.model_mail_mass_mailing_list,marketing.group_marketing_user,1,1,0,0
+mass_mailing_contact_user,mass_mailing_contact_user,mass_mailing.model_mail_mass_mailing_contact,marketing.group_marketing_user,1,1,1,0
+email_template_user,email_template_user,email_template.model_email_template,marketing.group_marketing_user,0,0,0,0
+mass_mailing.access_mass_mailing_contact,mail.mass_mailing.contact,mass_mailing.model_mail_mass_mailing_contact,base.group_user,1,1,1,0
+mass_mailing.access_mass_mailing_list,mail.mass_mailing.list,mass_mailing.model_mail_mass_mailing_list,base.group_user,1,1,0,0
+mass_mailing.access_mass_mailing,mail.mass_mailing,mass_mailing.model_mail_mass_mailing,base.group_user,1,0,0,0

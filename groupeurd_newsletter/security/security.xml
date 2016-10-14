@@ -1,0 +1,32 @@
+<openerp>
+	<data>
+		
+		<!--
+			Rule to ban everyone from removing a contact from a mailing list
+			
+			model="ir.rule" => indicates that it is a permission rule
+			field model_id => gives the object on which the rule is applied
+			fields perm_* => indicate the permissions which will be given (here: only "unlink")
+			field domain_force => a condition for who will get those given permissions (here: an impossible condition, so permission given to no one (except root admin))
+		-->
+		<record id="mass_mailing_contact_unlink_impossible" model="ir.rule">
+			<field name="name">Impossible for no one to remove a contact from mailing list</field>	
+			<field name="model_id" ref="mass_mailing.model_mail_mass_mailing_contact" />		
+			<!-- Specifies that this rule is global and applicable for all users and groups -->			
+			<field name="global" eval="1" />
+			<field name="perm_read" eval="0" />
+			<field name="perm_write" eval="0" />
+			<field name="perm_create" eval="0" />
+			<field name="perm_unlink" eval="1" />
+			<field name="domain_force">[('create_uid','=','-1')]</field>
+		</record>
+		
+		
+		<!-- Limit visibility of menu item "Modèles de courriel" in "Publipostage" only to marketing managers -->
+		<record id="mass_mailing.menu_email_template" model="ir.ui.menu">
+			<field name="groups_id" eval="[(6,0,[ref('marketing.group_marketing_manager')])]" />
+		</record>
+		 	
+		
+	</data>
+</openerp>
