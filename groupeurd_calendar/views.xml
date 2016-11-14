@@ -1,0 +1,53 @@
+<openerp>
+    <data>
+    	<!-- VIEWS -->
+		<record id="revised_event_form" model="ir.ui.view">
+			<field name="name">Event edition form with team management</field>
+			<field name="model">event.event</field>
+			<field name="inherit_id" ref="event.view_event_form" />
+			<field name="arch" type="xml">
+				<field name="address_id" position="after">
+					<field name="team_ids" widget="many2many_tags" />
+				</field>
+				<field name="organizer_id" position="attributes">
+					<attribute name="invisible">1</attribute>
+				</field>
+			</field>
+		</record>
+		
+		<!--  -->
+		<record id="revised_calendar_event_form" model="ir.ui.view">
+			<field name="name">Calendar Event edition form without name modification if linked to public event</field>
+			<field name="model">calendar.event</field>
+			<field name="inherit_id" ref="calendar.view_calendar_event_form" />
+			<field name="arch" type="xml">
+				<field name="name" position="attributes">
+					<attribute name="attrs">{"readonly":[('event_event_id','!=',False)]}</attribute>
+				</field>
+				<field name="user_id" position="attributes">
+					<attribute name="attrs">{"readonly":[('event_event_id','!=',False)]}</attribute>
+				</field>
+			</field>
+		</record>
+		
+		<!-- ACTIONS -->
+		
+		<record model="ir.actions.act_window" id="event.action_event_view">
+           <field name="name">Events</field>
+           <field name="type">ir.actions.act_window</field>
+           <field name="res_model">event.event</field>
+           <field name="view_type">form</field>
+           <field name="view_mode">kanban,calendar,tree,form</field>
+           <field name="context">{"search_default_upcoming":1,"from_eventevent_interface":1}</field>
+           <field name="search_view_id" ref="event.view_event_search"/>
+           <field name="help" type="html"><p class="oe_view_nocontent_create">
+				Click to add a new event.
+			</p><p>
+				Odoo helps you schedule and efficiently organize your events:
+				track registrations and participations, automate the confirmation emails,
+				sell tickets, etc.
+			</p>
+			</field>
+		</record>
+	</data>
+</openerp>

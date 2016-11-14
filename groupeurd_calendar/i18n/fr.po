@@ -1,0 +1,33 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* groupeurd_calendar
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-14 13:54+0000\n"
+"PO-Revision-Date: 2016-11-14 13:54+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: groupeurd_calendar
+#: model:ir.model,name:groupeurd_calendar.model_calendar_event
+#: model:ir.model,name:groupeurd_calendar.model_event_event
+msgid "Event"
+msgstr "Évènement"
+
+#. module: groupeurd_calendar
+#: field:event.event,team_ids:0
+msgid "Event team members"
+msgstr "Equipe de l'évènement"
+
+#. module: groupeurd_calendar
+#: view:calendar.event:groupeurd_calendar.revised_calendar_event_form
+msgid "{\"readonly\":[('event_event_id','!=',False)]}"
+msgstr "{\"readonly\":[('event_event_id','!=',False)]}"
+
