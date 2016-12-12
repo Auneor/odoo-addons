@@ -13,6 +13,12 @@
 		- accès à des vues personnalisées : planning de tous les salariés par semaine, planning de tous les salariés par mois
 		- synchro bi-directionnelle avec Thunderbird
 		- [optionnel] partage .ics des calendriers
+		
+		
+		INSTALLATION
+		Lors de l'installation, modifier le Filtre de domaine de la règle "Hide Private Meetings" à la valeur suivante
+		['|',('user_id','=',user.id),'|',('show_as','=','busy'),('show_as','=','free')]
+		=> cela permet d'afficher les évènements (calendar.event) qui sont de type disponibles
     """,
 
     'author': "Groupe URD",
@@ -29,7 +35,6 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
         'views.xml',
     ],
     # only loaded in demonstration mode

@@ -32,6 +32,8 @@
 		
 		<!-- ACTIONS -->
 		
+		<!-- Redefinition de l'action event.action_event_view juste pour y ajouter le context "from_eventevent_interface"
+				(tout le reste est identique au code d'origine de event.action_event_view dans le module event.event)-->
 		<record model="ir.actions.act_window" id="event.action_event_view">
            <field name="name">Events</field>
            <field name="type">ir.actions.act_window</field>
@@ -49,5 +51,7 @@
 			</p>
 			</field>
 		</record>
+		
+		
 	</data>
 </openerp>
