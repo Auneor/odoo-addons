@@ -1,20 +1,23 @@
 # -*- coding: utf-8 -*-
 from openerp import http
+from openerp.http import request
 
-# class GroupeurdCalendar(http.Controller):
-#     @http.route('/groupeurd_calendar/groupeurd_calendar/', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
-
-#     @http.route('/groupeurd_calendar/groupeurd_calendar/objects/', auth='public')
-#     def list(self, **kw):
-#         return http.request.render('groupeurd_calendar.listing', {
-#             'root': '/groupeurd_calendar/groupeurd_calendar',
-#             'objects': http.request.env['groupeurd_calendar.groupeurd_calendar'].search([]),
-#         })
-
-#     @http.route('/groupeurd_calendar/groupeurd_calendar/objects/<model("groupeurd_calendar.groupeurd_calendar"):obj>/', auth='public')
-#     def object(self, obj, **kw):
-#         return http.request.render('groupeurd_calendar.object', {
-#             'object': obj
-#         })
+class res_partner_icalendar(http.Controller):
+    @http.route(['/calendar-ics/<partner_id>/public.ics'], auth="public")
+    def icalendar_public(self, partner_id, **post):
+        #pdb.set_trace()
+        
+        partner = http.request.env['res.partner'].sudo().search([('id','=',partner_id)])
+        if partner:
+            document = partner.sudo().get_ics_calendar(type='public')
+            return request.make_response(
+                document,
+                headers=[
+                    ('Content-Disposition', 'attachment; filename="public.ics"'),
+                    ('Content-Type', 'text/calendar'),
+                    ('Content-Length', len(document)),
+                ]
+            )
+        else:
+            raise Warning("Public failed")
+            pass # Some error page

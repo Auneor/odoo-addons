@@ -85,3 +85,13 @@ class CalendarEvent(models.Model):
 		return res
 
 
+		
+	
+#Overrides calendar_ics "res_partner" override to have our custom URL
+class res_partner(models.Model):
+    _inherit = "res.partner"
+    @api.one
+    def create_ics_url(self):
+        self.ics_url_field = '%s/calendar-ics/%s/public.ics' % (self.env['ir.config_parameter'].sudo().get_param('web.base.url'), self.id)
+
+		
