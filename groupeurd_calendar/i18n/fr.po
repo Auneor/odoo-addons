@@ -106,3 +106,8 @@ msgstr "Mes évènements publics"
 msgid "Number of Events"
 msgstr "Nombre d'événements publics"
 
+
+#. module: mail
+#: model:ir.ui.menu,name:mail.mail_feeds_main
+msgid "Agenda"
+msgstr "Agenda"

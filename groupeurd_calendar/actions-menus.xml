@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+
+		<!-- 
+			MENUS
+		          --> 
+    	
+		<!-- Transformer le menu parent "Messagerie" en "Agenda"  -->
+		<record model="ir.ui.menu" id="mail.mail_feeds_main">
+			  <field name="name">Agenda</field>
+		</record>
+    	
+		<!-- Masquer tous les sous-menus "Messagerie" & "Mes groupes" de l'ancien menu parent "Messagerie" --> 
+		<record model="ir.ui.menu" id="mail.mail_feeds">
+			  <field name="groups_id" eval="[(6,0,[ref('base.group_erp_manager')])]" />
+		</record>
+		<record model="ir.ui.menu" id="mail.mail_group_root">
+			  <field name="groups_id" eval="[(6,0,[ref('base.group_erp_manager')])]" />
+		</record>
+
+	</data>
+</openerp>
