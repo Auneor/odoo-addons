@@ -6,17 +6,22 @@
         Paramétrage d'Odoo pour correspondre aux besoins CRM du Groupe URD.""",
 
     'description': """
-		- Ajout de champs personnalisés
+		- Ajout de champs personnalisés (note 20/02/2017: fait pour les contacts, pas pour les organisations)
 			- Personnalisation des listes d’affichage (tri, colonnes, filtres)
 		 - Personnalisation des écrans d’affichage des entités : position des champs, organisation par groupe des champs, champs obligatoires/facultatifs
 		 - Masquer le sous-menu "Ventes" jusqu'à ce que le besoin de suivi de pistes et opportunités soit remonté
 		 
 		 
-		Organisation
-		Nom, adresse (prévoir 3 lignes), Code postal, Pays, Téléphone, Télécopie, site web, budget annuel, langue principale, langue(s) secondaire(s), état d’adoption de Sigmah (Prise d’information, Souhait d’adoption, Adoption démarrée, Utilisation partielle, Utilisation complète, Non), zone de commentaires.
+		Contacts, ajout des champs:
+		Compte de réseau social (Skype, Twitter, LinkedIn, Facebook), Langue principale, langue(s) secondaires(s), Publications (liste d’URL).
+		
+		Organisation, ajout des champs:
+		budget annuel, langue principale, langue(s) secondaire(s), état d’adoption de Sigmah (Prise d’information, Souhait d’adoption, Adoption démarrée, Utilisation partielle, Utilisation complète, Non), zone de commentaires.
+		
+		Installation
+		============
+		Aller dans Configuration > Configuration > Ventes pour configuer le module 'web_linkedin'
 
-		Contacts
-		Civilité, Nom, prénom, fonction, type de fonction (liste de valeurs paramétrables) adresse (prévoir 3 lignes), code postal, pays, téléphone bureau, téléphone mobile, adresse mail, compte de réseau social (Skype, Twitter, LinkedIn, Facebook), Langue principale, langue(s) secondaires(s), niveau de contact (cercle de proximité de la relation), niveau universitaire, Centres d’intérêt (Liste de valeur, multisélection), compétences (Liste de valeur, multisélection) et nombre d’années dans la compétence sélectionnée, Publications (liste d’URL), zone de commentaires.
     """,
 
     'author': "Groupe URD",
@@ -29,7 +34,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'calendar_ics', 'groupeurd_newsletter'],
+    'depends': ['base', 'calendar_ics', 'groupeurd_newsletter', 'crm', 'partner_social_fields', 'web_linkedin'],
 
     # always loaded
     'data': [
