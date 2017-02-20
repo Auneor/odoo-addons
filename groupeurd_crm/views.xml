@@ -1,0 +1,44 @@
+<openerp>
+	<data>
+
+		<!-- 
+			VIEWS
+		          --> 
+		
+		<record id="contact_edition_form" model="ir.ui.view">
+			<field name="name">Contact edition form</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form" />
+		    <field name="arch" type="xml">
+				<!-- Masquer les boutons "Opportunités", "Rendez-vous" et "Appels" de la fiche contact -->
+				<xpath expr="//div[@name='buttons']" position="attributes">
+					<attribute name="groups">base.group_erp_manager</attribute>
+				</xpath>
+				
+				<xpath expr="//page[@name='internal_notes']" position="before">
+					<page name="mailing_subscriptions" string="Listes de diffusion">
+						<group>
+						<field name="list_ids" widget="many2many_checkboxes" string="Abonner à:" />
+						</group>
+						<group>
+						<field name="contact_ids" string="Abonnements" readonly="1" />
+						</group>
+					</page>
+				</xpath>
+			</field>
+		</record>
+	
+		<!-- Masquer la page "Calendar ICS" aux utilisateurs autres qu'admin -->
+		<record id="contact_edition_form_ics" model="ir.ui.view">
+			<field name="name">Contact edition form with ICS only for admin</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="calendar_ics.view_partner_form" />
+		    <field name="arch" type="xml">
+				<xpath expr="//page[@name='ics']" position="attributes">
+					<attribute name="groups">base.group_erp_manager</attribute>
+				</xpath>
+			</field>
+		</record>
+	
+	</data>
+</openerp>

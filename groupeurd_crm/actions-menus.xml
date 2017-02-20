@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<!-- 
+			ACTIONS
+		          --> 
+    
+        <record id="action_list_contacts" model="ir.actions.act_window">
+		    <field name="name">Tous les contacts</field>        
+		    <field name="res_model">res.partner</field>
+		    <field name="view_mode">kanban,tree,form</field>
+        </record>
+    
+        <record id="action_list_clients" model="ir.actions.act_window">
+		    <field name="name">Clients</field>        
+		    <field name="res_model">res.partner</field>
+		    <field name="view_mode">kanban,tree,form</field>
+			<field name="domain">[('customer','=',1)]</field>
+        </record>
+    
+        <record id="action_list_suppliers" model="ir.actions.act_window">
+		    <field name="name">Fournisseurs</field>        
+		    <field name="res_model">res.partner</field>
+		    <field name="view_mode">kanban,tree,form</field>
+			<field name="domain">[('supplier','=',1)]</field>
+        </record>
+		
+
+		<!-- 
+			MENUS
+		          --> 
+    	
+		<!-- Transformer le menu parent "Ventes" en "Contacts"  -->
+		<record model="ir.ui.menu" id="base.menu_base_partner">
+			  <field name="name">Contacts</field>
+		</record>
+    	
+		<!-- Masquer le sous-menu "Ventes" jusqu'à ce que le besoin de suivi de pistes et opportunités soit remonté --> 
+		<record model="ir.ui.menu" id="base.menu_sales">
+			  <field name="groups_id" eval="[(6,0,[ref('base.group_erp_manager')])]" />
+			  <field name="sequence" eval="2" />
+		</record>
+    	
+		<!-- Masquer le sous-menu "Appels consignés" jusqu'à ce que le besoin de suivi des appels soit remonté --> 
+		<record model="ir.ui.menu" id="crm.menu_crm_case_phone">
+			  <field name="groups_id" eval="[(6,0,[ref('base.group_erp_manager')])]" />
+		</record>
+
+		
+    	<!-- Ajouter le sous-menu "Contacts" du menu parent "Contacts" -->    
+    	<menuitem id="menu_contacts_contacts" parent="base.menu_base_partner" name="Contacts" sequence="1" action="" />
+    	<menuitem id="menu_contacts_contacts_touslescontacts" parent="menu_contacts_contacts" name="Tous les contacts" sequence="10" action="action_list_contacts" />
+    	<menuitem id="menu_contacts_contacts_clients" parent="menu_contacts_contacts" name="Clients" sequence="20" action="action_list_clients" />
+    	<menuitem id="menu_contacts_contacts_fournisseurs" parent="menu_contacts_contacts" name="Fournisseurs" sequence="30" action="action_list_suppliers" />
+
+	</data>
+</openerp>
