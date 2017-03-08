@@ -55,6 +55,21 @@
 			</field>
 		</record>
 		
+		<!-- Masquer l'option "orateur" d'un contact d'une organisation -->
+		<record id="disable_speaker_partner_form" model="ir.ui.view">
+				<field name="name">disable_speaker_partner</field>
+				<field name="model">res.partner</field>
+				<field name="inherit_id" ref="event.view_event_partner_info_form" />
+				<field name="arch" type="xml">
+						<field name="speaker" position="attributes">
+								<attribute name="invisible">1</attribute>
+						</field>
+						<xpath expr="//label[@for='speaker']" position="attributes">
+							<attribute name="invisible">1</attribute>
+						</xpath>
+				</field>
+		</record>
+		
 		
 		
 		<!-- ACTIONS -->

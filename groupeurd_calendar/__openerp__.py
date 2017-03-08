@@ -17,6 +17,7 @@
 		- descendre "évènement public" sous la case à cocher "toute la journée" dans la popup de modification d'un évènement de l'agenda personnel
 		- ajouter l'accès à "Invitations & divers" des évènements personnels à tous les utilisateurs
 		- retirer la possibilité de modifier tous les évènements par tout le monde, même quand ils ne sont pas invités à l'évènment
+		- Masquer l'option "orateur" d'un contact d'une organisation
 		
 		
 		INSTALLATION
@@ -33,7 +34,7 @@
     # Check https://github.com/odoo/odoo/blob/10.0/odoo/addons/base/module/module_data.xml
     # for the full list
     'category': 'Events',
-    'version': '0.2',
+    'version': '0.3',
 
     # any module necessary for this one to work correctly
     'depends': ['smile_event_event_calendar', 'calendar_ics', 'mail'],
