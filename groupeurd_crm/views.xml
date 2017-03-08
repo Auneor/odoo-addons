@@ -22,7 +22,7 @@
 				<xpath expr="//field[@name='website']" position="replace" />	
 				<xpath expr="//label[@string='Address']" position="before">
 					<field name="title" />
-					<field name="function" />
+					<field name="function" attrs="{'invisible': [('is_company','=',True)]}" />
 					<field name="email" />
 					<field name="website" widget="url" placeholder="e.g. www.urd.org"/>
 				</xpath>		
@@ -62,6 +62,19 @@
 				<xpath expr="//field[@name='fax']" position="replace" />
 				
 				
+				<xpath expr="//page[@name='internal_notes']" position="after">
+					<page name="sigmah_adoption" string="Adoption Sigmah" attrs="{'invisible': [('is_company','=',False)]}">
+						<group>
+							<field name="yearly_budget" />
+							<field name="sigmah_adoption_status" />
+							<field name="sigmah_package" />
+							<field name="sigmah_use_start" />
+							<field name="sigmah_autonomous_hosting" />
+							<field name="sigmah_users_count" />
+						</group>
+					</page>
+				</xpath>			
+				
 				
 				<xpath expr="//page[@name='internal_notes']" position="before">
 					<page name="mailing_subscriptions" string="Listes de diffusion">
@@ -78,7 +91,7 @@
 							
 				
 				<xpath expr="//page[@name='mailing_subscriptions']" position="after">
-					<page name="other_contact_info" string="Autres coordonnées">
+					<page name="other_contact_info" string="Adresse postale">
 						<group>
 						<label for="street" string="Address"/>
                             <div>
@@ -144,6 +157,7 @@
 				</xpath>
 			</field>
 		</record>
+							
 	
 	</data>
 </openerp>

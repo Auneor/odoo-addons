@@ -1,0 +1,9 @@
+<openerp>
+    <data>
+		<!-- Ajout d'une étiquette de vente 'Adoption Sigmah' pour le suivi des opportunités de Sigmah et permettre une fin de workflow automatisée -->
+        <record id="crm.categ_oppor_sigmah" model="crm.case.categ">
+			<field name="object_id" ref="crm.model_crm_lead"/>
+			<field name="name">Adoption Sigmah</field> 
+        </record>
+    </data>
+</openerp>

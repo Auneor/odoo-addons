@@ -33,7 +33,14 @@ class partner(models.Model):
 	contact_ids = fields.One2many("mail.mass_mailing.contact", "partner_id", string="Abonnements")
 	secondary_language1 = fields.Selection(tools.scan_languages(), string="Langue secondaire 1")	
 	secondary_language2 = fields.Selection(tools.scan_languages(), string="Langue secondaire 2")	
-	secondary_language3 = fields.Selection(tools.scan_languages(), string="Langue secondaire 3")	
+	secondary_language3 = fields.Selection(tools.scan_languages(), string="Langue secondaire 3")
+	yearly_budget = fields.Integer(string="Budget annuel de l'organisation (M€)")
+	sigmah_adoption_status = fields.Selection([('no',"Non"),('engaged',"Adoption engagée"),('partial',"Utilisation partielle"),('complete',"Utilisation complète")], default='no', string="Adoption de Sigmah", required=True)
+	sigmah_package = fields.Selection([('basic',"socle"),('full',"complet")], string="Forfait de services")
+	sigmah_use_start = fields.Date(string="Début d'utilisation")
+	sigmah_autonomous_hosting = fields.Boolean(default=False, string="Hébergement autonome")
+	sigmah_users_count = fields.Integer(string="Nombre d'utilisateurs de Sigmah")
+	
 	
 	
 	#Si des listes de diffusion sont ajoutées/supprimées pour le "Contact", modifier les abonnements en conséquence

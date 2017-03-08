@@ -36,10 +36,14 @@
 			  <field name="name">Contacts</field>
 		</record>
     	
-		<!-- Masquer le sous-menu "Ventes" jusqu'à ce que le besoin de suivi de pistes et opportunités soit remonté --> 
-		<record model="ir.ui.menu" id="base.menu_sales">
+		<!-- Masquer l'élément "Pistes" du sous-menu "Ventes" jusqu'à ce que le besoin de suivi de pistes soit remonté --> 
+		<record model="ir.ui.menu" id="crm.menu_crm_leads">
 			  <field name="groups_id" eval="[(6,0,[ref('base.group_erp_manager')])]" />
-			  <field name="sequence" eval="2" />
+		</record>
+    	
+		<!-- Masquer l'élément "Clients" du sous-menu "Ventes" --> 
+		<record model="ir.ui.menu" id="base.menu_partner_form">
+			  <field name="groups_id" eval="[(6,0,[ref('base.group_erp_manager')])]" />
 		</record>
     	
 		<!-- Masquer le sous-menu "Appels consignés" jusqu'à ce que le besoin de suivi des appels soit remonté --> 

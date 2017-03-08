@@ -19,3 +19,17 @@ msgstr ""
 #: model:ir.ui.menu,name:base.menu_base_partner
 msgid "Contacts"
 msgstr "Contacts"
+
+
+#. module: base
+#: help:res.partner,is_company:0
+#: help:res.users,is_company:0
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr "Cochez si ce contact est une organisation (appelée société ailleurs dans Odoo), sinon il s'agit d'un particulier"
+
+
+#. module: base
+#: view:res.partner:base.view_partner_form
+#: view:res.partner:base.view_partner_simple_form
+msgid "Is a Company?"
+msgstr "Est une organisation ?"
