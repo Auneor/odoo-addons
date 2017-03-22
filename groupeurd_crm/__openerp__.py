@@ -7,9 +7,9 @@
 
     'description': """
 		- Ajout de champs personnalisés (note 20/02/2017: fait pour les contacts, pas pour les organisations)
-			- Personnalisation des listes d’affichage (tri, colonnes, filtres)
-		 - Personnalisation des écrans d’affichage des entités : position des champs, organisation par groupe des champs, champs obligatoires/facultatifs
-		 - Masquer les éléments "Clients" et "Pistes" du sous-menu "Ventes" jusqu'à ce que le besoin de suivi de pistes soit remonté
+		- Personnalisation des listes d’affichage (tri, colonnes, filtres)
+		- Personnalisation des écrans d’affichage des entités : position des champs, organisation par groupe des champs, champs obligatoires/facultatifs
+		- Masquer les éléments "Clients" et "Pistes" du sous-menu "Ventes" jusqu'à ce que le besoin de suivi de pistes soit remonté
 		 
 		Contacts, ajout des champs:
 		Compte de réseau social (Skype, Twitter, LinkedIn, Facebook), Langue principale, langue(s) secondaires(s), Publications (liste d’URL).
@@ -17,8 +17,7 @@
 		Organisation, ajout des champs:
 		budget annuel, langue principale, langue(s) secondaire(s), état d’adoption de Sigmah (Prise d’information, Souhait d’adoption, Adoption démarrée, Utilisation partielle, Utilisation complète, Non), zone de commentaires.
 		
-		Installation
-		============
+		Installation:
 		Aller dans Configuration > Configuration > Ventes pour configuer le module 'web_linkedin'
 		Pour avoir un Mail de rappel pour compléter organisation après opportunité Sigmah gagnée, créer une "Action automatisée" en utilisant le domaine
 			suivant comme filtre: 	[('categ_ids.name', '=','Adoption Sigmah'),('stage_id.name','=','Gagné')]
