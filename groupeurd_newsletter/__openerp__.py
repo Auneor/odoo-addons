@@ -17,7 +17,7 @@
 		- Ne garder que les modèles de courriel de newsletter dans Publipostages/Modèles de courriel
 		- Retrait insertion automatique lien désinscription
 		- Message de confirmation de désincription plus verbeux
-		- Modèles de newsletter spécifiques (AJOUTER noupdate=1 au template AVANT PUBLICATION MODULE)
+		- Modèles de newsletter spécifiques
 		
 		En projet:
 		- Ecraser les propriétés d'un publipostage par les propriétés standard d'un modèle de courriel au moment de la sélection de ce dernier.

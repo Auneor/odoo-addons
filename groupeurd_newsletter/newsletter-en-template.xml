@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
-    <!-- <data noupdate="1"> -->
-	<data>
+	<data noupdate="1">
         <record id="groupeurd_newsletter_en_template201704" model="email.template">
 			<field name="name">Newsletter EN</field>
 			<field name="email_from">Groupe URD &lt;newsletter@urd.org&gt;</field>
