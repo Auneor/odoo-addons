@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <!-- <data noupdate="1"> -->
+	<data>
+        <record id="groupeurd_newsletter_en_template201704" model="email.template">
+			<field name="name">Newsletter EN</field>
+			<field name="email_from">Groupe URD &lt;newsletter@urd.org&gt;</field>
+			<field name="reply_to">Groupe URD &lt;newsletter@urd.org&gt;</field>
+			<field name="subject">[GroupeURD-Newsletter]</field>
+			<field name="lang">en</field>
+			<field name="model_id" ref="mass_mailing.model_mail_mass_mailing_contact"/>
+			<field name="auto_delete" eval="True"/>
+			<field name="body_html">
+<![CDATA[
+
+
+<div id="header">
+	<p style="font-family: Arial,Helvetica,sans-serif; font-size: 11px; color: rgb(145, 145, 145); text-align: center;">
+	If you can't see this newsletter properly,
+	<a href="/newsletter/html_version_${ctx['params']['id']}" style="color: rgb(246, 170, 66); text-decoration: underline;">click here</a></p>
+	<table style="background-color: rgb(244, 244, 244);" align="center" border="0" cellpadding="0" cellspacing="0" width="640">
+	<tbody>
+	<tr>
+	<td height="100"><img style="width: 640px; height: 100px;" src="http://www.urd.org/newsletter/urd-img/bandeau-en.png" alt="bandeau-en.png"></td>
+	</tr>
+	<tr>
+	<td style="font-size: 0pt;" height="16"><br>
+	</td>
+	</tr>
+	<tr>
+	<td>
+		<table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+		<tbody>
+		<tr>
+		<td style="font-family: Georgia,Times,serif; font-size: 11px; text-align: right; color: rgb(0, 0, 0);" height="11"> NEWSLETTER #58 | March 2017<span style="font-size: 14px;"> </span></td>
+		</tr>
+		<tr>
+		<td style="font-size: 0pt;" height="5">o<br>
+		</td>
+		</tr>
+		</table>
+	</td>
+	</tr>
+	</tbody>
+	</table>
+</div>
+
+<div id="a-la-une">
+	<table style="background-color: rgb(244, 244, 244);" align="center" border="0" cellpadding="0" cellspacing="0" width="640">
+	<tr>
+	<td>
+		<table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+		<tbody>
+			<tr>
+			<td style="font-size: 0pt;" height="1"><img src="http://www.urd.org/newsletter/urd-img/separateur-t.jpg" alt="séparateur complet" height="1" width="600"></td>
+			</tr>
+			<tr>
+			<td style="font-size: 0pt;" height="13"><br></td>
+			</tr>
+			<tr>
+			<td style="font-family: Georgia,Times,serif; font-size: 14px; text-align: left; color: rgb(0, 0, 0);" height="14">FOCUS</td>
+			</tr>
+			<tr>
+			<td style="font-size: 0pt;" height="18"><br>
+			</td>
+			</tr>
+			<tr>
+				<td>
+				<table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+				<tbody>
+				<tr>
+				<td style="font-size: 0pt;" width="170">
+				<div style="text-align: center;"> <a href="http://www.urd.org/spip.php?article2840"><img style="border: 0px solid ; " src="http://www.urd.org/newsletter/urd-img/2017-58/ALNAP.PNG" ></a></div>
+				</td>
+				<td style="font-size: 0pt;" width="20"><br>
+				</td>
+				<td style="font-size: 0pt;" width="410">
+				<table style="width: 410px;" border="0" cellpadding="0" cellspacing="0">
+				<tbody>
+				<tr>
+				<td style="font-family: Georgia,Times,serif; font-size: 18px; font-weight: bold; color: rgb(241, 157, 43); text-align: left;">Participation
+				à l’étude d’ALNAP « L’État du système humanitaire, édition 2018
+				»&nbsp;<br>
+				</td>
+				</tr>
+				<tr>
+				<td height="14"><br>
+				</td>
+				</tr>
+				<tr>
+				<td style="vertical-align: top; font-family: Arial,Helvetica,sans-serif; font-size: 14px; color: rgb(145, 145, 145); line-height: 18px; text-align: justify;">Le
+				Groupe URD participera à la réalisation de la prochaine édition de «
+				L’État du système humanitaire, édition 2018 » coordonnée par ALNAP et
+				en partenariat avec d’autres chercheurs. Il aura notamment la
+				responsabilité de réaliser une centaine d’entretiens et des études de
+				cas sur différents terrains afin de rendre compte des performances du
+				secteur et d’en dégager les principales tendances apparues au cours des
+				dernières années.&nbsp;<a href="http://www.urd.org/spip.php?article2840" style="color: rgb(241, 157, 43); font-size: 12px; text-decoration: none;">En
+				savoir plus</a></td>
+				</tr>
+				</tbody>
+				</table>
+				</td>
+				</tr>
+				</tbody>
+				</table>
+				</td>
+			</tr>
+			<tr>
+			<td style="font-size: 0pt;" height="19"><br></td>
+			</tr>
+		</tbody>
+		</table>
+	</td>
+	</tr>
+	</table>
+</div>
+
+<div id="actu-header">
+	<table style="background-color: rgb(244, 244, 244);" align="center" border="0" cellpadding="0" cellspacing="0" width="640">
+	<tr>
+	<td>
+		<table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+		<tbody>
+			<tr>
+			<td style="font-size: 0pt;" height="1"><img src="http://www.urd.org/newsletter/urd-img/separateur.png" alt="separateur.png" height="1" width="600"></td>
+			</tr>
+			<tr>
+			<td style="font-size: 0pt;" height="13"><br>
+			</td>
+			</tr>
+			<tr>
+			<td style="font-family: Georgia,Times,serif; font-variant: small-caps; font-size: 14px; text-align: left; color: rgb(0, 0, 0);" height="14">NEWS</td>
+			</tr>
+			<tr>
+			<td style="font-size: 0pt;" height="18"><br>
+			</td>
+			</tr>
+		</tbody>
+		</table>
+	</td>
+	</tr>
+	</table>
+</div>
+
+<div>
+	<table style="background-color: rgb(244, 244, 244);" align="center" border="0" cellpadding="0" cellspacing="0" width="640">
+	<tr>
+	<td>
+		<table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+		<tbody>
+			<tr>
+			<td>
+			<table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+				<tbody>
+					<tr>
+					<td style="font-size: 0pt;" valign="top" width="440">
+					<table align="center" border="0" cellpadding="0" cellspacing="0" width="440">
+						<tbody>
+							<tr>
+							<td style="font-family: Georgia,Times,serif; font-size: 18px; text-align: justify; font-weight: bold; color: rgb(241, 157, 43);" height="20">Recherche sur des réponses urbaines pérennes
+							pour les déplacés internes en Centrafrique <br>
+							</td>
+							</tr>
+							<tr>
+							<td style="font-size: 0pt;" height="14"><br>
+							</td>
+							</tr>
+							<tr>
+							<td style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; color: rgb(144, 144, 144); line-height: 18px; text-align: justify;" valign="top">Le Groupe URD démarre une recherche financée
+							par IIED – International Institute for Environment and Development –
+							sur la difficile intégration des enjeux urbains dans la réponse à la
+							récente crise centrafricaine à Bangui. Les violences survenues entre
+							2013 et 2015 ont généré de nombreux déplacements internes de
+							populations dans un contexte de faiblesse des institutions
+							étatiques.&nbsp;<a href="http://www.urd.org/spip.php?article2844" style="color: rgb(241, 157, 43); font-size: 12px; text-decoration: none;">En
+							savoir plus <br>
+							</a></td>
+							</tr>
+						</tbody>
+					</table>
+					</td>
+					<td style="font-size: 0pt;" width="30"><br>
+					</td>
+					<td style="font-size: 0pt;" width="130">
+					<div style="text-align: right;"> </div>
+					<div style="text-align: center;"><a href="http://www.urd.org/spip.php?article2844"><img src="http://www.urd.org/newsletter/urd-img/2017-58/IIED.PNG" style="border: 0px solid ;"></a></div>
+					</td>
+					</tr>
+					<tr>
+					<td style="font-size: 0pt;" height="16">&nbsp;<br>
+					</td>
+					<td style="font-size: 0pt;" height="16"><br>
+					</td>
+					<td style="font-size: 0pt;" height="16"><br>
+					</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+			</tr>
+		</tbody>
+		</table>
+	</td>
+	</tr>
+	</table>
+</div>
+
+
+<div id="veille-header">
+	<table style="background-color: rgb(244, 244, 244);" align="center" border="0" cellpadding="0" cellspacing="0" width="640">
+	<tr>
+	<td>
+		<table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+		<tbody>
+			<tr>
+			<td>&nbsp;</td>
+			</tr>
+			<tr>
+			<td style="font-size: 0pt;" height="1"><img src="http://www.urd.org/newsletter/urd-img/separateur.png" alt="separateur.png" height="1" width="600"></td>
+			</tr>
+			<tr>
+			<td style="font-size: 0pt;" height="13"><br>
+			</td>
+			</tr>
+			<tr>
+			<td style="font-family: Georgia,Times,serif; font-variant: small-caps; font-size: 14px; text-align: left; color: rgb(0, 0, 0);" height="14">LITERATURE MONITORING</td>
+			</tr>
+			<tr>
+			<td style="font-size: 0pt;" height="18"><br>
+			</td>
+			</tr>
+		</tbody>
+		</table>
+	</td>
+	</tr>
+	</table>
+</div>
+
+<div>
+	<table style="background-color: rgb(244, 244, 244);" align="center" border="0" cellpadding="0" cellspacing="0" width="640">
+	<tr>
+	<td>
+		<table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+		<tbody>
+			<tr>
+			<td style="font-size: 0pt;" valign="top" width="440">
+			<table align="center" border="0" cellpadding="0" cellspacing="0" width="440">
+			<tbody>
+			<tr>
+			<td style="font-family: Georgia,Times,serif; font-size: 14px; text-align: left; color: rgb(255, 255, 255);" height="18"> <img src="http://www.urd.org/newsletter/urd-img/veille-fr-02_DeplacementPopulation.png" style="border: 0px solid ; "><br>
+			</td>
+			</tr>
+			<tr>
+			<td style="font-size: 0pt;" height="6"><br>
+			</td>
+			</tr>
+			<tr>
+			<td style="font-family: Georgia,Times,serif; font-size: 18px; font-weight: bold; color: rgb(241, 157, 43); text-align: justify;" height="18">Forced Migration Review, « Resettlement » </td>
+			</tr>
+			<tr>
+			<td style="font-size: 0pt;" height="14"><br>
+			</td>
+			</tr>
+			<tr>
+			<td style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; color: rgb(144, 144, 144); line-height: 18px; text-align: justify;" valign="top">Ce
+			numéro de la revue des migrations forcées s’intéresse aux modalités et
+			aux enjeux de la réinstallation, à la façon dont celle-ci est gérée,
+			aussi bien financièrement qu’humainement. Les articles présentent
+			différentes études de cas, des exemples de réinstallation positifs et
+			d’autres plus négatifs. Des retours en arrière historiques montrent par
+			exemple la réinstallation des réfugiés hongrois en 1956. Des articles
+			généraux clôturent la revue. <a style="color: rgb(241, 157, 43); font-size: 12px; text-decoration: none;" href="http://www.urd.org/Veille-bibliographique-mars-2017?artpage=3-11#outil_sommaire_2">En
+			savoir plus</a></td>
+			</tr>
+			</tbody>
+			</table>
+			</td>
+			<td style="font-size: 0pt;" width="30"><br>
+			</td>
+			<td style="font-size: 0pt; text-align: center;" width="130">
+			<div style="text-align: center;"> </div>
+			<div style="text-align: center;"><a href="http://www.fmreview.org/sites/fmr/files/FMRdownloads/en/resettlement.pdf"><img style="border: 0px solid ; float: right; " src="http://www.urd.org/newsletter/urd-img/2017-58/Veille1.PNG" /></a></div>
+			</td>
+			</tr>
+			<tr>
+			<td  style="font-size: 0pt; vertical-align: top;" height="14">o<br />
+			</td>
+			<td style="vertical-align: top;"><br>
+			</td>
+			<td style="vertical-align: top;"><br>
+			</td>
+			</tr>
+		</tbody>
+		</table>
+	</td>
+	</tr>
+	</table>
+</div>
+
+<div id="footer-veille">
+	<table style="background-color: rgb(244, 244, 244);" align="center" border="0" cellpadding="0" cellspacing="0" width="640">
+	<tr>
+	<td>
+		<table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+		<tbody>
+			<tr>
+			<td width="440">&nbsp;</td>
+			<td width="30"><br>
+			</td>
+			<td width="130"><br>
+			</td>
+			</tr>
+			<tr>
+			<td style="text-align: right;" height="16"><a href="http://www.urd.org/spip.php?rubrique107" style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; color: rgb(241, 157, 43); text-decoration: underline;">Further reading</a></td>
+			<td style="font-size: 0pt;" height="16"><br>
+			</td>
+			<td style="font-size: 0pt;" height="16"><br>
+			</td>
+			</tr>
+			<tr>
+			<td style="vertical-align: top;"><br>
+			</td>
+			<td style="vertical-align: top;"><br>
+			</td>
+			<td style="vertical-align: top;"><br>
+			</td>
+			</tr>
+			<tr>
+			<td style="font-size: 0pt;" height="19"><br>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</td>
+			</tr>
+		</tbody>
+		</table>
+	</td>
+	</tr>
+	</table>
+</div>
+
+<div id="footer">
+	<p style="font-family: Arial,Helvetica,sans-serif; font-size: 11px; color: rgb(145, 145, 145); text-align: center; line-height: 18px;">
+	© Groupe URD - La Fontaine des Marins - 26170 PLAISIANS - Tel :+33 (0)4
+	75 28 29 35 - <a href="http://www.urd.org/" style="color: rgb(246, 170, 66); text-decoration: underline;">www.urd.org</a>
+	<br>
+	<a href="/mail/mailing/${ctx['params']['id']}/unsubscribe?res_id=${object.id}&amp;db=groupeurd&amp;email=${object.email}" style="color: rgb(246, 170, 66); text-decoration: underline;">Unsubscribe</a></p>
+</div>
+
+
+
+
+]]>
+			</field>
+       </record>
+    </data>
+</openerp>

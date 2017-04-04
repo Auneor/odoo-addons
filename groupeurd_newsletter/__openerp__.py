@@ -17,6 +17,10 @@
 		- Ne garder que les modèles de courriel de newsletter dans Publipostages/Modèles de courriel
 		- Retrait insertion automatique lien désinscription
 		- Message de confirmation de désincription plus verbeux
+		- Modèles de newsletter spécifiques (AJOUTER noupdate=1 au template AVANT PUBLICATION MODULE)
+		
+		En projet:
+		- Ecraser les propriétés d'un publipostage par les propriétés standard d'un modèle de courriel au moment de la sélection de ce dernier.
     """,
 
     'author': "Groupe URD",
@@ -26,10 +30,10 @@
     # Check https://github.com/odoo/odoo/blob/master/openerp/addons/base/module/module_data.xml
     # for the full list
     'category': 'Marketing',
-    'version': '0.1',
+    'version': '0.2',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','mass_mailing','marketing'],
+    'depends': ['base','mass_mailing','marketing','website_mail'],
 
     # always loaded
     'data': [
@@ -37,9 +41,8 @@
         'security/security.xml',
         'actions-menus.xml',
         'views.xml',
-    ],
-    # only loaded in demonstration mode (not used in this groupeurd_newsletter module)
-    'demo': [
-        #'demo.xml',
+		'newsletter-fr-template.xml',
+		'newsletter-en-template.xml',
+		'snippets.xml',
     ],
 }

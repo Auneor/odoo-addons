@@ -37,7 +37,7 @@ class MailMail(osv.Model):
 	_inherit = ['mail.mail']
 	
 	def _get_unsubscribe_url(self, cr, uid, mail, email_to, msg=None, context=None):
-		return None
+		return ""
 
 
 #class MassMailing(osv.Model):
