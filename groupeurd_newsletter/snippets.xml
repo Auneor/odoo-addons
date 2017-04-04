@@ -15,11 +15,11 @@
 
 <div id="snippet_groupeurd" class="tab-pane fade in active">
 	
-	<!-- Actualité Newsletter Groupe URD -->
+	<!-- Actualité Newsletter Groupe URD - FR -->
     <div>
         <div class="oe_snippet_thumbnail">
             <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_text_image.png"/>
-            <span class="oe_snippet_thumbnail_title">Actualité</span>
+            <span class="oe_snippet_thumbnail_title">Actualité FR</span>
         </div>
         <div class="oe_snippet_body" style="padding:0px; margin:0px">
 
@@ -78,11 +78,11 @@
 	
 	
 	
-	<!-- Veille Newsletter Groupe URD -->
+	<!-- Veille Newsletter Groupe URD - FR -->
     <div>
         <div class="oe_snippet_thumbnail">
             <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_text_image.png"/>
-            <span class="oe_snippet_thumbnail_title">Veille</span>
+            <span class="oe_snippet_thumbnail_title">Veille FR</span>
         </div>
         <div class="oe_snippet_body" style="padding:0px; margin:0px">
 			
@@ -123,7 +123,133 @@
 					</td>
 					<td style="font-size: 0pt; text-align: center;" width="130">
 					<div style="text-align: center;"> </div>
-					<div style="text-align: center;"><a href="http://www.fmreview.org/sites/fmr/files/FMRdownloads/en/resettlement.pdf"><img style="border: 0px solid ; float: right; " src="http://www.urd.org/newsletter/urd-img/2017-58/Veille1.PNG"  /></a></div>
+					<div style="text-align: center;"><a href="http://www.fmreview.org/sites/fmr/files/FMRdownloads/en/resettlement.pdf"><img style="border: 0px solid ; float: right; " src="http://www.urd.org/newsletter/urd-img/2014-25/Veille2HPG.png"  /></a></div>
+					</td>
+					</tr>
+					<tr>
+					<td style="font-size: 0pt; vertical-align: top;" height="14">o<br />
+					</td>
+					<td style="vertical-align: top;"><br />
+					</td>
+					<td style="vertical-align: top;"><br />
+					</td>
+					</tr>
+				</tbody>
+				</table>
+			</td>
+			</tr>
+			</table>
+	
+        </div>
+    </div>
+	
+	<!-- Actualité Newsletter Groupe URD - EN -->
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_text_image.png"/>
+            <span class="oe_snippet_thumbnail_title">Actualité EN</span>
+        </div>
+        <div class="oe_snippet_body" style="padding:0px; margin:0px">
+
+			<table style="background-color: rgb(244, 244, 244);" align="center" border="0" cellpadding="0" cellspacing="0" width="640">
+				<tbody>
+					<tr>
+					<td>
+					<table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+						<tbody>
+							<tr>
+							<td style="font-size: 0pt;" valign="top" width="440">
+							<table align="center" border="0" cellpadding="0" cellspacing="0" width="440">
+								<tbody>
+									<tr>
+									<td style="font-family: Georgia,Times,serif; font-size: 18px; text-align: justify; font-weight: bold; color: rgb(241, 157, 43);" height="20">News title<br />
+									</td>
+									</tr>
+									<tr>
+									<td style="font-size: 0pt;" height="14"><br />
+									</td>
+									</tr>
+									<tr>
+									<td style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; color: rgb(144, 144, 144); line-height: 18px; text-align: justify;" valign="top">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..
+									<a href="http://www.urd.org/spip.php?article2844" style="color: rgb(241, 157, 43); font-size: 12px; text-decoration: none;">Read more<br />
+									</a></td>
+									</tr>
+								</tbody>
+							</table>
+							</td>
+							<td style="font-size: 0pt;" width="30"><br />
+							</td>
+							<td style="font-size: 0pt;" width="130">
+							<div style="text-align: right;"> </div>
+							<div style="text-align: center;"><a href="http://www.urd.org/spip.php?article2844"><img src="http://www.urd.org/newsletter/urd-img/2017-58/IIED.PNG" style="border: 0px solid ;" /></a></div>
+							</td>
+							</tr>
+							<tr>
+							<td style="font-size: 0pt;" height="16"><br />
+							</td>
+							<td style="font-size: 0pt;" height="16"><br />
+							</td>
+							<td style="font-size: 0pt;" height="16"><br />
+							</td>
+							</tr>
+						</tbody>
+					</table>
+					</td>
+					</tr>
+				</tbody>
+			</table>
+	
+        </div>
+    </div>
+	
+	
+	
+	<!-- Veille Newsletter Groupe URD - EN -->
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_text_image.png"/>
+            <span class="oe_snippet_thumbnail_title">Veille EN</span>
+        </div>
+        <div class="oe_snippet_body" style="padding:0px; margin:0px">
+			
+			<table style="background-color: rgb(244, 244, 244);" align="center" border="0" cellpadding="0" cellspacing="0" width="640">
+			<tr>
+			<td>
+				<table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+				<tbody>
+					<tr>
+					<td style="font-size: 0pt;" valign="top" width="440">
+					<table align="center" border="0" cellpadding="0" cellspacing="0" width="440">
+					<tbody>
+					<tr>
+					<td style="font-family: Georgia,Times,serif; font-size: 14px; text-align: left; color: rgb(255, 255, 255);" height="18"> <img src="http://www.urd.org/newsletter/urd-img/veille-fr-02_DeplacementPopulation.png"  style="border: 0px solid ;" /><br />
+					</td>
+					</tr>
+					<tr>
+					<td style="font-size: 0pt;" height="6"><br />
+					</td>
+					</tr>
+					<tr>
+					<td style="font-family: Georgia,Times,serif; font-size: 18px; font-weight: bold; color: rgb(241, 157, 43); text-align: justify;" height="18">Forced Migration Review, « Resettlement » </td>
+					</tr>
+					<tr>
+					<td style="font-size: 0pt;" height="14"><br />
+					</td>
+					</tr>
+					<tr>
+					<td style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; color: rgb(144, 144, 144); line-height: 18px; text-align: justify;" valign="top">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					<a style="color: rgb(241, 157, 43); font-size: 12px; text-decoration: none;" href="http://www.urd.org/Veille-bibliographique-mars-2017?artpage=3-11#outil_sommaire_2">Read more</a></td>
+					</tr>
+					</tbody>
+					</table>
+					</td>
+					<td style="font-size: 0pt;" width="30"><br />
+					</td>
+					<td style="font-size: 0pt; text-align: center;" width="130">
+					<div style="text-align: center;"> </div>
+					<div style="text-align: center;"><a href="http://www.fmreview.org/sites/fmr/files/FMRdownloads/en/resettlement.pdf"><img style="border: 0px solid ; float: right; " src="http://www.urd.org/newsletter/urd-img/2014-25/Veille2HPG.png"  /></a></div>
 					</td>
 					</tr>
 					<tr>
