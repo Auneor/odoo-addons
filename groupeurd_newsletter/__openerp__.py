@@ -15,12 +15,13 @@
 		- Ajouter un champ "unsubscribed_by_odoo_user" qui sera manipulé pour les désincriptions par interface
 		- Afficher champ create_uid pour savoir provenance des contacts
 		- Ne garder que les modèles de courriel de newsletter dans Publipostages/Modèles de courriel
-		- Retrait insertion automatique lien désinscription
-		- Message de confirmation de désincription plus verbeux
 		- Modèles de newsletter spécifiques
+		- Lien vers version HTML (format proposé: __HTML_VERSION_URL__)
+		- Placement libre du lien de désinscription (format proposé: __UNSUBSCRIBE_URL__)
 		
 		En projet:
 		- Ecraser les propriétés d'un publipostage par les propriétés standard d'un modèle de courriel au moment de la sélection de ce dernier.
+		- Message de confirmation de désincription plus verbeux.
     """,
 
     'author': "Groupe URD",
@@ -30,7 +31,7 @@
     # Check https://github.com/odoo/odoo/blob/master/openerp/addons/base/module/module_data.xml
     # for the full list
     'category': 'Marketing',
-    'version': '0.2',
+    'version': '0.3',
 
     # any module necessary for this one to work correctly
     'depends': ['base','mass_mailing','marketing','website_mail'],

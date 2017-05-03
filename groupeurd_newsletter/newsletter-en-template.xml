@@ -16,7 +16,7 @@
 <div id="header">
 	<p style="font-family: Arial,Helvetica,sans-serif; font-size: 11px; color: rgb(145, 145, 145); text-align: center;">
 	If you can't see this newsletter properly,
-	<a href="/newsletter/html_version_${ctx['params']['id']}" style="color: rgb(246, 170, 66); text-decoration: underline;">click here</a></p>
+	<a href="__HTML_VERSION_URL__" style="color: rgb(246, 170, 66); text-decoration: underline;">click here</a></p>
 	<table style="background-color: rgb(244, 244, 244);" align="center" border="0" cellpadding="0" cellspacing="0" width="640">
 	<tbody>
 	<tr>
@@ -336,7 +336,7 @@
 	© Groupe URD - La Fontaine des Marins - 26170 PLAISIANS - Tel :+33 (0)4
 	75 28 29 35 - <a href="http://www.urd.org/" style="color: rgb(246, 170, 66); text-decoration: underline;">www.urd.org</a>
 	<br>
-	<a href="/mail/mailing/${ctx['params']['id']}/unsubscribe?res_id=${object.id}&amp;db=groupeurd&amp;email=${object.email}" style="color: rgb(246, 170, 66); text-decoration: underline;">Unsubscribe</a></p>
+	<a href="__UNSUBSCRIBE_URL__" style="color: rgb(246, 170, 66); text-decoration: underline;">Unsubscribe</a></p>
 </div>
 
 
