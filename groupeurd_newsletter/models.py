@@ -41,7 +41,10 @@ class MailMail(osv.Model):
 	_inherit = ['mail.mail']
 
 	def _get_unsubscribe_url(self, cr, uid, mail, email_to, msg=None, context=None):
-		base_url = self.pool.get('ir.config_parameter').get_param(cr, uid, 'web.base.url')
+		if 'mass_mailing_test' in context:
+			base_url = self.pool.get('ir.config_parameter').get_param(cr, uid, 'web.base.url')
+		else:
+			base_url = ""
 		url = urlparse.urljoin(
 			base_url, 'mail/mailing/%(mailing_id)s/unsubscribe?%(params)s' % {
 				'mailing_id': mail.mailing_id.id,
@@ -51,14 +54,16 @@ class MailMail(osv.Model):
 		return '%s' % url
 
 	def _get_html_version_url(self, cr, uid, mail, email_to, context=None):
-		base_url = self.pool.get('ir.config_parameter').get_param(cr, uid, 'web.base.url')
+		if 'mass_mailing_test' in context:
+			base_url = self.pool.get('ir.config_parameter').get_param(cr, uid, 'web.base.url')
+		else:
+			base_url = ""
 		url = urlparse.urljoin(base_url, 'newsletter/html_version_%s' % mail.mailing_id.id)
 		return '%s' % url
 
-	def send_get_email_dict(self, cr, uid, mail, partner=None, context=None):
-	
+	def send_get_email_dict(self, cr, uid, mail, partner=None, context=None):	
 		email_to = self.send_get_mail_to(cr, uid, mail, partner=partner, context=context)
-		body = self.send_get_mail_body(cr, uid, mail, partner=partner, context=context)		
+		body = self.send_get_mail_body(cr, uid, mail, partner=partner, context=context)
 		
 		if mail.mailing_id and body and email_to:
 			emails = tools.email_split(email_to[0])
@@ -90,6 +95,9 @@ class TestMassMailing(osv.TransientModel):
 	mass_mailing_id = fields.Many2one('mail.mass_mailing', 'Mailing', required=True, ondelete='cascade')
 
 	def send_mail_test(self, cr, uid, ids, context=None):
+		#Add a 'mass_mailing_test' flag in the context to be able to build correct HTML_VERSION/UNSUBSCRIBE URLs in test mode
+		context['mass_mailing_test'] = True
+		
 		Mail = self.pool['mail.mail']
 		for wizard in self.browse(cr, uid, ids, context=context):
 			mailing = wizard.mass_mailing_id
