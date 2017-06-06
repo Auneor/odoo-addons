@@ -35,7 +35,7 @@ _logger = logging.getLogger(__name__)
 
 
 try:
-    from icalendar import Calendar, Event, vDatetime, FreeBusy
+    from icalendar import Calendar, Event, vDatetime, FreeBusy, Alarm
 except ImportError:
     raise Warning('icalendar library missing, pip install icalendar')
 
