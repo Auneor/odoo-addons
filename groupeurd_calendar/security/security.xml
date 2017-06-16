@@ -1,0 +1,26 @@
+<openerp>
+	<data>
+		
+		<!--
+			limiter autorisation de suppression d'un événement à ses seuls participants
+			
+			model="ir.rule" => indicates that it is a permission rule
+			field model_id => gives the object on which the rule is applied
+			fields perm_* => indicate the permissions which will be given (here: only "unlink")
+			field domain_force => a condition for who will get those given permissions (here: an impossible condition, so permission given to no one (except root admin))
+		-->
+		<record id="calendar_event_unlink_only_from_participants" model="ir.rule">
+			<field name="name">Own events for Participants</field>	
+			<field name="model_id" ref="calendar.model_calendar_event" />		
+			<!-- Specifies that this rule is global and applicable for all users and groups -->			
+			<field name="global" eval="1" />
+			<field name="perm_read" eval="0" />
+			<field name="perm_write" eval="0" />
+			<field name="perm_create" eval="0" />
+			<field name="perm_unlink" eval="1" />
+			<field name="domain_force">[('partner_ids','in',user.partner_id.id)]</field>
+		</record>
+		 	
+		
+	</data>
+</openerp>
