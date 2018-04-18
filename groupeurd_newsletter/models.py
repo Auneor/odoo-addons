@@ -9,6 +9,9 @@ from openerp.osv import osv
 from openerp import tools
 from openerp.tools.translate import _
 
+import logging
+_logger = logging.getLogger(__name__)
+
 # Overrides mass mailing Contact for this module purpose
 class contact(models.Model):
 	_name = "mail.mass_mailing.contact"
@@ -70,7 +73,11 @@ class MailMail(osv.Model):
 			has_email_to = emails and emails[0] or False
 			unsubscribe_url = self._get_unsubscribe_url(cr, uid, mail, has_email_to, context=context)
 			if unsubscribe_url:
-				body = body.replace('__UNSUBSCRIBE_URL__', unsubscribe_url)
+				if body.count('__UNSUBSCRIBE_URL__') > 0:
+					body = body.replace('__UNSUBSCRIBE_URL__', unsubscribe_url)
+				else:
+					unsubscribe_link = '<small><a href="%s">%s</a></small>' % (unsubscribe_url, _('Click to unsubscribe'))
+					body = tools.append_content_to_html(body,unsubscribe_link, plaintext=False, container_tag='p')
 			html_version_url = self._get_html_version_url(cr, uid, mail, has_email_to, context=context)
 			body = body.replace('__HTML_VERSION_URL__', html_version_url)
 			
@@ -95,10 +102,13 @@ class TestMassMailing(osv.TransientModel):
 	mass_mailing_id = fields.Many2one('mail.mass_mailing', 'Mailing', required=True, ondelete='cascade')
 
 	def send_mail_test(self, cr, uid, ids, context=None):
+		_logger.info('entering new send_mail_test')
 		#Add a 'mass_mailing_test' flag in the context to be able to build correct HTML_VERSION/UNSUBSCRIBE URLs in test mode
 		context['mass_mailing_test'] = True
 		
 		Mail = self.pool['mail.mail']
+		
+		_logger.info('before send_mail_test for loop')
 		for wizard in self.browse(cr, uid, ids, context=context):
 			mailing = wizard.mass_mailing_id
 			test_emails = tools.email_split(wizard.email_to)
@@ -117,11 +127,18 @@ class TestMassMailing(osv.TransientModel):
 				mail_mail_obj = Mail.browse(cr, uid, Mail.create(cr, uid, mail_values, context=context), context=context)
 				unsubscribe_url = Mail._get_unsubscribe_url(cr, uid, mail_mail_obj, test_mail, context=context)
 				html_version_url = Mail._get_html_version_url(cr, uid, mail_mail_obj, test_mail, context=context)
-				body = mailing.body_html.replace('__UNSUBSCRIBE_URL__', unsubscribe_url)
+				if unsubscribe_url:
+					if mailing.body_html.count('__UNSUBSCRIBE_URL__') > 0:
+						body = mailing.body_html.replace('__UNSUBSCRIBE_URL__', unsubscribe_url)
+					else:
+						unsubscribe_link = '<small><a href="%s">%s</a></small>' % (unsubscribe_url, _('Click to unsubscribe'))
+						body = tools.append_content_to_html(mailing.body_html,unsubscribe_link, plaintext=False, container_tag='p')				
 				body = mailing.body_html.replace('__HTML_VERSION_URL__', html_version_url)
 				Mail.write(cr, uid, mail_mail_obj.id, {'body_html': mailing.body_html}, context=context)
 				mail_ids.append(mail_mail_obj.id)
+			_logger.info('just before new send_mail_test Mail.send')
 			Mail.send(cr, uid, mail_ids, context=context)
+			_logger.info('just after new send_mail_test Mail.send')
 			self.pool['mail.mass_mailing'].write(cr, uid, [mailing.id], {'state': 'test'}, context=context)
 		return True
 	
