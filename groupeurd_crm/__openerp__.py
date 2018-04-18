@@ -38,7 +38,7 @@
     'version': '0.2',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'calendar_ics', 'groupeurd_newsletter', 'crm', 'partner_social_fields'],
+    'depends': ['base', 'calendar_ics', 'groupeurd_newsletter', 'crm', 'partner_social_fields', 'partner_firstname'],
 
     # always loaded
     'data': [
