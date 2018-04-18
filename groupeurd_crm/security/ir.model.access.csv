@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_groupeurd_crm_groupeurd_crm,groupeurd_crm.groupeurd_crm,model_groupeurd_crm_groupeurd_crm,,1,0,0,0
+access_groupeurd_crm_languagelist,access_groupeurd_crm_languagelist,model_groupeurd_crm_languagelist,,1,1,1,0

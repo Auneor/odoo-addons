@@ -33,3 +33,15 @@ msgstr "Cochez si ce contact est une organisation (appelée société ailleurs d
 #: view:res.partner:base.view_partner_simple_form
 msgid "Is a Company?"
 msgstr "Est une organisation ?"
+
+
+#. module: base
+#: view:res.partner:base.view_res_partner_filter field:res.partner,user_id:0
+msgid "Salesperson"
+msgstr "Relation interne principale"
+
+
+#. module: partner_firstname
+#: field:res.partner,lastname:0
+msgid "Last name"
+msgstr "Nom de famille"

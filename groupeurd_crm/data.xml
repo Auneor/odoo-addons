@@ -5,5 +5,86 @@
 			<field name="object_id" ref="crm.model_crm_lead"/>
 			<field name="name">Adoption Sigmah</field> 
         </record>
+		
+		<!-- Ajout de la liste des langues dans une table spécifique -->
+<record id="groupeurd_crm.languagelist_am_ET" model="groupeurd_crm.languagelist">	<field name="locale">am_ET</field>	<field name="name">Amharic / አምሃርኛ</field>	</record>
+<record id="groupeurd_crm.languagelist_ar_SY" model="groupeurd_crm.languagelist">	<field name="locale">ar_SY</field>	<field name="name">Arabic / الْعَرَبيّة</field>	</record>
+<record id="groupeurd_crm.languagelist_bg_BG" model="groupeurd_crm.languagelist">	<field name="locale">bg_BG</field>	<field name="name">Bulgarian / български език</field>	</record>
+<record id="groupeurd_crm.languagelist_bs_BA" model="groupeurd_crm.languagelist">	<field name="locale">bs_BA</field>	<field name="name">Bosnian / bosanski jezik</field>	</record>
+<record id="groupeurd_crm.languagelist_ca_ES" model="groupeurd_crm.languagelist">	<field name="locale">ca_ES</field>	<field name="name">Catalan / Català</field>	</record>
+<record id="groupeurd_crm.languagelist_cs_CZ" model="groupeurd_crm.languagelist">	<field name="locale">cs_CZ</field>	<field name="name">Czech / Čeština</field>	</record>
+<record id="groupeurd_crm.languagelist_da_DK" model="groupeurd_crm.languagelist">	<field name="locale">da_DK</field>	<field name="name">Danish / Dansk</field>	</record>
+<record id="groupeurd_crm.languagelist_de_DE" model="groupeurd_crm.languagelist">	<field name="locale">de_DE</field>	<field name="name">German / Deutsch</field>	</record>
+<record id="groupeurd_crm.languagelist_de_CH" model="groupeurd_crm.languagelist">	<field name="locale">de_CH</field>	<field name="name">German (CH) / Deutsch (CH)</field>	</record>
+<record id="groupeurd_crm.languagelist_el_GR" model="groupeurd_crm.languagelist">	<field name="locale">el_GR</field>	<field name="name">Greek / Ελληνικά</field>	</record>
+<record id="groupeurd_crm.languagelist_en_AU" model="groupeurd_crm.languagelist">	<field name="locale">en_AU</field>	<field name="name">English (AU)</field>	</record>
+<record id="groupeurd_crm.languagelist_en_GB" model="groupeurd_crm.languagelist">	<field name="locale">en_GB</field>	<field name="name">English (UK)</field>	</record>
+<record id="groupeurd_crm.languagelist_en_US" model="groupeurd_crm.languagelist">	<field name="locale">en_US</field>	<field name="name">English (US)</field>	</record>
+<record id="groupeurd_crm.languagelist_es_AR" model="groupeurd_crm.languagelist">	<field name="locale">es_AR</field>	<field name="name">Spanish (AR) / Español (AR)</field>	</record>
+<record id="groupeurd_crm.languagelist_es_BO" model="groupeurd_crm.languagelist">	<field name="locale">es_BO</field>	<field name="name">Spanish (BO) / Español (BO)</field>	</record>
+<record id="groupeurd_crm.languagelist_es_CL" model="groupeurd_crm.languagelist">	<field name="locale">es_CL</field>	<field name="name">Spanish (CL) / Español (CL)</field>	</record>
+<record id="groupeurd_crm.languagelist_es_CO" model="groupeurd_crm.languagelist">	<field name="locale">es_CO</field>	<field name="name">Spanish (CO) / Español (CO)</field>	</record>
+<record id="groupeurd_crm.languagelist_es_CR" model="groupeurd_crm.languagelist">	<field name="locale">es_CR</field>	<field name="name">Spanish (CR) / Español (CR)</field>	</record>
+<record id="groupeurd_crm.languagelist_es_DO" model="groupeurd_crm.languagelist">	<field name="locale">es_DO</field>	<field name="name">Spanish (DO) / Español (DO)</field>	</record>
+<record id="groupeurd_crm.languagelist_es_EC" model="groupeurd_crm.languagelist">	<field name="locale">es_EC</field>	<field name="name">Spanish (EC) / Español (EC)</field>	</record>
+<record id="groupeurd_crm.languagelist_es_ES" model="groupeurd_crm.languagelist">	<field name="locale">es_ES</field>	<field name="name">Spanish / Español</field>	</record>
+<record id="groupeurd_crm.languagelist_es_GT" model="groupeurd_crm.languagelist">	<field name="locale">es_GT</field>	<field name="name">Spanish (GT) / Español (GT)</field>	</record>
+<record id="groupeurd_crm.languagelist_es_MX" model="groupeurd_crm.languagelist">	<field name="locale">es_MX</field>	<field name="name">Spanish (MX) / Español (MX)</field>	</record>
+<record id="groupeurd_crm.languagelist_es_PA" model="groupeurd_crm.languagelist">	<field name="locale">es_PA</field>	<field name="name">Spanish (PA) / Español (PA)</field>	</record>
+<record id="groupeurd_crm.languagelist_es_PE" model="groupeurd_crm.languagelist">	<field name="locale">es_PE</field>	<field name="name">Spanish (PE) / Español (PE)</field>	</record>
+<record id="groupeurd_crm.languagelist_es_PY" model="groupeurd_crm.languagelist">	<field name="locale">es_PY</field>	<field name="name">Spanish (PY) / Español (PY)</field>	</record>
+<record id="groupeurd_crm.languagelist_es_UY" model="groupeurd_crm.languagelist">	<field name="locale">es_UY</field>	<field name="name">Spanish (UY) / Español (UY)</field>	</record>
+<record id="groupeurd_crm.languagelist_es_VE" model="groupeurd_crm.languagelist">	<field name="locale">es_VE</field>	<field name="name">Spanish (VE) / Español (VE)</field>	</record>
+<record id="groupeurd_crm.languagelist_et_EE" model="groupeurd_crm.languagelist">	<field name="locale">et_EE</field>	<field name="name">Estonian / Eesti keel</field>	</record>
+<record id="groupeurd_crm.languagelist_eu_ES" model="groupeurd_crm.languagelist">	<field name="locale">eu_ES</field>	<field name="name">Basque / Euskara</field>	</record>
+<record id="groupeurd_crm.languagelist_fa_IR" model="groupeurd_crm.languagelist">	<field name="locale">fa_IR</field>	<field name="name">Persian / فارس</field>	</record>
+<record id="groupeurd_crm.languagelist_fi_FI" model="groupeurd_crm.languagelist">	<field name="locale">fi_FI</field>	<field name="name">Finnish / Suomi</field>	</record>
+<record id="groupeurd_crm.languagelist_fr_BE" model="groupeurd_crm.languagelist">	<field name="locale">fr_BE</field>	<field name="name">French (BE) / Français (BE)</field>	</record>
+<record id="groupeurd_crm.languagelist_fr_CA" model="groupeurd_crm.languagelist">	<field name="locale">fr_CA</field>	<field name="name">French (CA) / Français (CA)</field>	</record>
+<record id="groupeurd_crm.languagelist_fr_CH" model="groupeurd_crm.languagelist">	<field name="locale">fr_CH</field>	<field name="name">French (CH) / Français (CH)</field>	</record>
+<record id="groupeurd_crm.languagelist_fr_CA" model="groupeurd_crm.languagelist">	<field name="locale">fr_CA</field>	<field name="name">French (CA) / Français (CA)</field>	</record>
+<record id="groupeurd_crm.languagelist_fr_FR" model="groupeurd_crm.languagelist">	<field name="locale">fr_FR</field>	<field name="name">French / Français</field>	</record>
+<record id="groupeurd_crm.languagelist_gl_ES" model="groupeurd_crm.languagelist">	<field name="locale">gl_ES</field>	<field name="name">Galician / Galego</field>	</record>
+<record id="groupeurd_crm.languagelist_gu_IN" model="groupeurd_crm.languagelist">	<field name="locale">gu_IN</field>	<field name="name">Gujarati / ગુજરાતી</field>	</record>
+<record id="groupeurd_crm.languagelist_he_IL" model="groupeurd_crm.languagelist">	<field name="locale">he_IL</field>	<field name="name">Hebrew / עִבְרִי</field>	</record>
+<record id="groupeurd_crm.languagelist_hi_IN" model="groupeurd_crm.languagelist">	<field name="locale">hi_IN</field>	<field name="name">Hindi / हिंदी</field>	</record>
+<record id="groupeurd_crm.languagelist_hr_HR" model="groupeurd_crm.languagelist">	<field name="locale">hr_HR</field>	<field name="name">Croatian / hrvatski jezik</field>	</record>
+<record id="groupeurd_crm.languagelist_hu_HU" model="groupeurd_crm.languagelist">	<field name="locale">hu_HU</field>	<field name="name">Hungarian / Magyar</field>	</record>
+<record id="groupeurd_crm.languagelist_id_ID" model="groupeurd_crm.languagelist">	<field name="locale">id_ID</field>	<field name="name">Indonesian / Bahasa Indonesia</field>	</record>
+<record id="groupeurd_crm.languagelist_it_IT" model="groupeurd_crm.languagelist">	<field name="locale">it_IT</field>	<field name="name">Italian / Italiano</field>	</record>
+<record id="groupeurd_crm.languagelist_ja_JP" model="groupeurd_crm.languagelist">	<field name="locale">ja_JP</field>	<field name="name">Japanese / 日本語</field>	</record>
+<record id="groupeurd_crm.languagelist_ka_GE" model="groupeurd_crm.languagelist">	<field name="locale">ka_GE</field>	<field name="name">Georgian / ქართული ენა</field>	</record>
+<record id="groupeurd_crm.languagelist_kab_DZ" model="groupeurd_crm.languagelist">	<field name="locale">kab_DZ</field>	<field name="name">Kabyle / Taqbaylit</field>	</record>
+<record id="groupeurd_crm.languagelist_ko_KP" model="groupeurd_crm.languagelist">	<field name="locale">ko_KP</field>	<field name="name">Korean (KP) / 한국어 (KP)</field>	</record>
+<record id="groupeurd_crm.languagelist_ko_KR" model="groupeurd_crm.languagelist">	<field name="locale">ko_KR</field>	<field name="name">Korean (KR) / 한국어 (KR)</field>	</record>
+<record id="groupeurd_crm.languagelist_lo_LA" model="groupeurd_crm.languagelist">	<field name="locale">lo_LA</field>	<field name="name">Lao / ພາສາລາວ</field>	</record>
+<record id="groupeurd_crm.languagelist_lt_LT" model="groupeurd_crm.languagelist">	<field name="locale">lt_LT</field>	<field name="name">Lithuanian / Lietuvių kalba</field>	</record>
+<record id="groupeurd_crm.languagelist_lv_LV" model="groupeurd_crm.languagelist">	<field name="locale">lv_LV</field>	<field name="name">Latvian / latviešu valoda</field>	</record>
+<record id="groupeurd_crm.languagelist_mk_MK" model="groupeurd_crm.languagelist">	<field name="locale">mk_MK</field>	<field name="name">Macedonian / македонски јазик</field>	</record>
+<record id="groupeurd_crm.languagelist_mn_MN" model="groupeurd_crm.languagelist">	<field name="locale">mn_MN</field>	<field name="name">Mongolian / монгол</field>	</record>
+<record id="groupeurd_crm.languagelist_my_MM" model="groupeurd_crm.languagelist">	<field name="locale">my_MM</field>	<field name="name">Burmese / မြန်မာဘာသာ</field>	</record>
+<record id="groupeurd_crm.languagelist_nb_NO" model="groupeurd_crm.languagelist">	<field name="locale">nb_NO</field>	<field name="name">Norwegian Bokmål / Norsk bokmål</field>	</record>
+<record id="groupeurd_crm.languagelist_nl_NL" model="groupeurd_crm.languagelist">	<field name="locale">nl_NL</field>	<field name="name">Dutch / Nederlands</field>	</record>
+<record id="groupeurd_crm.languagelist_nl_BE" model="groupeurd_crm.languagelist">	<field name="locale">nl_BE</field>	<field name="name">Dutch (BE) / Nederlands (BE)</field>	</record>
+<record id="groupeurd_crm.languagelist_pl_PL" model="groupeurd_crm.languagelist">	<field name="locale">pl_PL</field>	<field name="name">Polish / Język polski</field>	</record>
+<record id="groupeurd_crm.languagelist_pt_BR" model="groupeurd_crm.languagelist">	<field name="locale">pt_BR</field>	<field name="name">Portuguese (BR) / Português (BR)</field>	</record>
+<record id="groupeurd_crm.languagelist_pt_PT" model="groupeurd_crm.languagelist">	<field name="locale">pt_PT</field>	<field name="name">Portuguese / Português</field>	</record>
+<record id="groupeurd_crm.languagelist_ro_RO" model="groupeurd_crm.languagelist">	<field name="locale">ro_RO</field>	<field name="name">Romanian / română</field>	</record>
+<record id="groupeurd_crm.languagelist_ru_RU" model="groupeurd_crm.languagelist">	<field name="locale">ru_RU</field>	<field name="name">Russian / русский язык</field>	</record>
+<record id="groupeurd_crm.languagelist_sl_SI" model="groupeurd_crm.languagelist">	<field name="locale">sl_SI</field>	<field name="name">Slovenian / slovenščina</field>	</record>
+<record id="groupeurd_crm.languagelist_sk_SK" model="groupeurd_crm.languagelist">	<field name="locale">sk_SK</field>	<field name="name">Slovak / Slovenský jazyk</field>	</record>
+<record id="groupeurd_crm.languagelist_sq_AL" model="groupeurd_crm.languagelist">	<field name="locale">sq_AL</field>	<field name="name">Albanian / Shqip</field>	</record>
+<record id="groupeurd_crm.languagelist_sr_RS" model="groupeurd_crm.languagelist">	<field name="locale">sr_RS</field>	<field name="name">Serbian (Cyrillic) / српски</field>	</record>
+<record id="groupeurd_crm.languagelist_sr@latin" model="groupeurd_crm.languagelist">	<field name="locale">sr@latin</field>	<field name="name">Serbian (Latin) / srpski</field>	</record>
+<record id="groupeurd_crm.languagelist_sv_SE" model="groupeurd_crm.languagelist">	<field name="locale">sv_SE</field>	<field name="name">Swedish / svenska</field>	</record>
+<record id="groupeurd_crm.languagelist_te_IN" model="groupeurd_crm.languagelist">	<field name="locale">te_IN</field>	<field name="name">Telugu / తెలుగు</field>	</record>
+<record id="groupeurd_crm.languagelist_tr_TR" model="groupeurd_crm.languagelist">	<field name="locale">tr_TR</field>	<field name="name">Turkish / Türkçe</field>	</record>
+<record id="groupeurd_crm.languagelist_vi_VN" model="groupeurd_crm.languagelist">	<field name="locale">vi_VN</field>	<field name="name">Vietnamese / Tiếng Việt</field>	</record>
+<record id="groupeurd_crm.languagelist_uk_UA" model="groupeurd_crm.languagelist">	<field name="locale">uk_UA</field>	<field name="name">Ukrainian / українська</field>	</record>
+<record id="groupeurd_crm.languagelist_zh_CN" model="groupeurd_crm.languagelist">	<field name="locale">zh_CN</field>	<field name="name">Chinese (CN) / 简体中文</field>	</record>
+<record id="groupeurd_crm.languagelist_zh_HK" model="groupeurd_crm.languagelist">	<field name="locale">zh_HK</field>	<field name="name">Chinese (HK)</field>	</record>
+<record id="groupeurd_crm.languagelist_zh_TW" model="groupeurd_crm.languagelist">	<field name="locale">zh_TW</field>	<field name="name">Chinese (TW) / 正體字</field>	</record>
+<record id="groupeurd_crm.languagelist_th_TH" model="groupeurd_crm.languagelist">	<field name="locale">th_TH</field>	<field name="name">Thai / ภาษาไทย</field>	</record>
+
     </data>
 </openerp>

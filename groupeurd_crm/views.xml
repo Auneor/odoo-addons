@@ -28,26 +28,27 @@
 				</xpath>		
 				
 				
-				<!-- Renommer onglet "Achats/Ventes" en "Autres", et y mettre les langues secondaires -->
+				<!-- Renommer onglet "Achats/Ventes" en "Autres", et y mettre les langues secondaires et pays d'expertise -->
 				<xpath expr="//page[@name='sales_purchases']" position="attributes">
 					<attribute name="string">Autres</attribute>
-				</xpath>	
-				<xpath expr="//field[@name='user_id']" position="attributes">
-					<attribute name="string">Relation interne principale</attribute>
-				</xpath>		
+				</xpath>
 				<xpath expr="//field[@name='lang']" position="replace">
-					<field name="secondary_language1" string="Langue secondaire 1" />
+					<field name="secondary_languages" string="Langues secondaires" />
 				</xpath>	
-				<xpath expr="//field[@name='secondary_language1']" position="after">
-					<field name="secondary_language2" string="Langue secondaire 2" />
-				</xpath>
-				<xpath expr="//field[@name='secondary_language2']" position="after">
-					<field name="secondary_language3" string="Langue secondaire 3" />
-				</xpath>
+				<xpath expr="//field[@name='date']" position="replace">
+					<field name="country_experiences" string="Pays d'expertise" />
+				</xpath>	
 				<!-- Mettre la langue principale sur l'écran principal -->
 				<xpath expr="//field[@name='title']" position="after">
 					<field name="lang" string="Langue principale" />
-				</xpath>
+				</xpath>				
+				<xpath expr="//field[@name='ref']" position="replace" />
+				<xpath expr="//field[@name='active']" position="after">
+					<field name="ref" />
+				</xpath>				
+				<xpath expr="//field[@name='ref']" position="after">
+					<field name="date" />
+				</xpath>				
 				
 									
 				<xpath expr="//label[@string='Address']" position="replace" />
@@ -139,6 +140,8 @@
 						<button name="goto_twitter" string="Voir" type="object"/>
 						<field name="facebook" />
 						<button name="goto_facebook" string="Voir" type="object"/>
+                        <field name="linkedin"/>
+                        <button name="goto_linkedin" string="Voir" type="object"/>
                     </group>    
 				</xpath>		
 			</field>

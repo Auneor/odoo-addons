@@ -22,7 +22,12 @@ class contact(models.Model):
 			if new_id.list_id not in new_id.partner_id.list_ids:
 				new_id.partner_id.list_ids |= new_id.list_id
 		return new_id
+
+class languagelist(models.Model):
+	_name = "groupeurd_crm.languagelist"
 	
+	locale = fields.Char(required = True, string="Locale")
+	name = fields.Char(required = True, string="Nom de la langue")
 
 # Surcharge l'objet "Contact" pour ajouter les liens vers les objets "Abonné" et "Liste de diffusion"
 class partner(models.Model):
@@ -31,9 +36,10 @@ class partner(models.Model):
 	
 	list_ids = fields.Many2many("mail.mass_mailing.list", string="Listes de diffusion")
 	contact_ids = fields.One2many("mail.mass_mailing.contact", "partner_id", string="Abonnements")
-	secondary_language1 = fields.Selection(tools.scan_languages(), string="Langue secondaire 1")	
-	secondary_language2 = fields.Selection(tools.scan_languages(), string="Langue secondaire 2")	
-	secondary_language3 = fields.Selection(tools.scan_languages(), string="Langue secondaire 3")
+	secondary_languages = fields.Many2many("groupeurd_crm.languagelist", string="Langues secondaires")
+	country_experiences = fields.Many2many("res.country", string="Pays d'expertise")
+	linkedin = fields.Char(string="LinkedIn")
+	
 	yearly_budget = fields.Integer(string="Budget annuel de l'organisation (M€)")
 	sigmah_adoption_status = fields.Selection([('no',"Non"),('engaged',"Adoption engagée"),('partial',"Utilisation partielle"),('complete',"Utilisation complète")], default='no', string="Adoption de Sigmah", required=True)
 	sigmah_package = fields.Selection([('basic',"socle"),('full',"complet")], string="Forfait de services")
@@ -81,6 +87,22 @@ class partner(models.Model):
 		return res
 	
 	
+	def goto_linkedin(self, cr, uid, ids, context=None):
+		partner_obj = self.pool.get('res.partner')
+		partner = partner_obj.browse(cr, uid, ids, context=context)[0]
+		if partner.linkedin:
+			good_starting_urls = ['https://linkedin.com/', 'https://www.linkedin.com/', \
+								  'http://linkedin.com/', 'http://www.linkedin.com/']
+			non_protocol_starting_urls = ['linkedin.com/', 'www.linkedin.com/']
+			
+			if any(map(lambda x: partner.linkedin.startswith(x), good_starting_urls)):
+				url = partner.linkedin
+			elif any(map(lambda x: partner.linkedin.startswith(x), non_protocol_starting_urls)):
+				url = 'https://' + partner.linkedin
+			else:
+				url = 'https://www.linkedin.com/' + partner.linkedin
+			
+			return {'type': 'ir.actions.act_url', 'url': url, 'target': 'new'}
 		
 	
 	# A FAIRE
