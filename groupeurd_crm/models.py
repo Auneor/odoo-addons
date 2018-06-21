@@ -39,6 +39,7 @@ class partner(models.Model):
 	secondary_languages = fields.Many2many("groupeurd_crm.languagelist", string="Langues secondaires")
 	country_experiences = fields.Many2many("res.country", string="Pays d'expertise")
 	linkedin = fields.Char(string="LinkedIn")
+	moodle_username = fields.Char(string="Moodle username")
 	
 	yearly_budget = fields.Integer(string="Budget annuel de l'organisation (M€)")
 	sigmah_adoption_status = fields.Selection([('no',"Non"),('engaged',"Adoption engagée"),('partial',"Utilisation partielle"),('complete',"Utilisation complète")], default='no', string="Adoption de Sigmah", required=True)
@@ -47,7 +48,27 @@ class partner(models.Model):
 	sigmah_autonomous_hosting = fields.Boolean(default=False, string="Hébergement autonome")
 	sigmah_users_count = fields.Integer(string="Nombre d'utilisateurs de Sigmah")
 	
+	#Si des listes de diffusion sont ajoutées à la création du "Contact", ajouter les abonnements en conséquence
+	@api.model
+	def create(self, vals):				
+		#On fait la création d'abord pour pouvoir associer les abonnements ensuite
+		res = super(partner, self).create(vals)
+		
+		#Ajout de listes: pour toutes les listes en valeur, créer l'abonnement
+		subscribe_contact_vals_array = []
+		if vals.get('list_ids'):
+			for list_id in vals['list_ids'][0][2]:
+				list = self.env['mail.mass_mailing.list'].browse(list_id)
+				subscribe_contact_vals_array.append({'email': vals.get('email'), 'list_id':list_id})
+		
+		
+		#Appliquer les ajout de listes
+		for contact_vals in subscribe_contact_vals_array: 
+			self.env['mail.mass_mailing.contact'].create(contact_vals)	
+			
+		return res
 	
+		
 	
 	#Si des listes de diffusion sont ajoutées/supprimées pour le "Contact", modifier les abonnements en conséquence
 	@api.multi
@@ -86,6 +107,22 @@ class partner(models.Model):
 				contact.unsubscribed_by_odoo_user = self.env.user
 		return res
 	
+	#Si des listes de diffusion ont été ajoutées pour le "Contact", supprimer les abonnements en conséquence lors de la suppression du contact
+	@api.multi
+	def unlink(self):
+		#Appliquer les désincriptions
+		for partner_element in self:
+			contact_array = self.env['mail.mass_mailing.contact'].search([('email','=',partner_element.email)])
+			for contact in contact_array:
+				contact.opt_out = True
+				contact.unsubscription_date = fields.Datetime.now()
+				contact.unsubscribed_by_odoo_user = self.env.user				
+		
+		#On fait la suppression après les désabonnements pour avoir l'objet partner toujours présent
+		res = super(partner, self).unlink()
+		
+		return res
+		
 	
 	def goto_linkedin(self, cr, uid, ids, context=None):
 		partner_obj = self.pool.get('res.partner')

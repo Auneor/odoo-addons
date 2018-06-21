@@ -15,6 +15,7 @@
 		- Ajouter un lien direct vers profil LinkedIn pour pâlier défaut plugin existant
 		- Rendre le champ "Relation interne principale" accessible comme champ de recherche avancé, et le remplir par défaut par le créateur du contact
 		- Renommer "Nom" en "Nom de famille" pour distinguer le nom de famille du "Nom" qui est l'association Prénom + Nom de famille
+		- Ajouter le champ "Nom d'utilisateur Moodle" pour permettre le lien d'Odoo vers Moodle
 		 
 		Contacts, ajout des champs:
 		Compte de réseau social (Skype, Twitter, LinkedIn, Facebook), Langue principale, langues secondaires, Publications (liste d’URL).
@@ -35,7 +36,7 @@
     # Check https://github.com/odoo/odoo/blob/master/openerp/addons/base/module/module_data.xml
     # for the full list
     'category': 'Uncategorized',
-    'version': '0.2',
+    'version': '0.3',
 
     # any module necessary for this one to work correctly
     'depends': ['base', 'calendar_ics', 'groupeurd_newsletter', 'crm', 'partner_social_fields', 'partner_firstname'],

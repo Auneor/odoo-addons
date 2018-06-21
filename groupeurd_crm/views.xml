@@ -32,6 +32,9 @@
 				<xpath expr="//page[@name='sales_purchases']" position="attributes">
 					<attribute name="string">Autres</attribute>
 				</xpath>
+				<xpath expr="//field[@name='user_id']" position="after">
+					<field name="moodle_username" string="Moodle username" />
+				</xpath>	
 				<xpath expr="//field[@name='lang']" position="replace">
 					<field name="secondary_languages" string="Langues secondaires" />
 				</xpath>	
