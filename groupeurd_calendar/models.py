@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from openerp import models, fields, api
+from openerp.tools.translate import _
 
 #Debuggger package
 import pdb
@@ -59,8 +60,24 @@ class Event(models.Model):
 #
 # "calendar.event" est l'objet pour les évènements affichés dans les calendriers des utilisateurs
 #
+class CalAtt(models.Model):
+	_inherit = 'calendar.attendee'
+
+        invit_sent=fields.Boolean("If invit has been sent",default=False)
+
 class CalendarEvent(models.Model):
 	_inherit = 'calendar.event'
+
+        @api.multi
+        def send_invit(self):
+                attendees=self.env["calendar.attendee"].search([("event_id","=",self.id)])
+                for attendee in attendees:
+                        print(attendee)
+                        if not attendee.invit_sent:
+                                attendee._send_mail_to_attendees([attendee.id],template_xmlid='calendar_template_meeting_invitation')
+                                attendee.invit_sent=True
+                                self.message_post(body=_("An invitation email has been sent to attendee %s") % (attendee.partner_id.name,), subtype="calendar.subtype_invitation")
+        
 
 	@api.model
 	def create(self, vals):
@@ -72,8 +89,8 @@ class CalendarEvent(models.Model):
 
 	@api.multi
 	def write(self, vals):
+                self=self.with_context(no_email=True)
 		res = super(CalendarEvent, self).write(vals)
-		
 		# Après la modification, si la modif n'est pas faite depuis l'event.event,
 		# on met à jour la team member listes de l'event.event
 		context = dict(self._context or {})
