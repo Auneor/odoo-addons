@@ -71,9 +71,11 @@ class CalendarEvent(models.Model):
         @api.multi
         def send_invit(self):
                 attendees=self.env["calendar.attendee"].search([("event_id","=",self.id)])
+                part_logged=self.env["res.users"].browse([self.env.uid])
+                id_part_cur= part_logged.partner_id
+
                 for attendee in attendees:
-                        print(attendee)
-                        if not attendee.invit_sent:
+                        if not attendee.invit_sent and attendee.partner_id.id != id_part_cur.id:
                                 attendee._send_mail_to_attendees([attendee.id],template_xmlid='calendar_template_meeting_invitation')
                                 attendee.invit_sent=True
                                 self.message_post(body=_("An invitation email has been sent to attendee %s") % (attendee.partner_id.name,), subtype="calendar.subtype_invitation")
@@ -81,6 +83,7 @@ class CalendarEvent(models.Model):
 
 	@api.model
 	def create(self, vals):
+                self=self.with_context(no_email=True)
 		calendar_event = super(CalendarEvent, self).create(vals)
 		if calendar_event.event_event_id:
 			calendar_event.partner_ids = calendar_event.event_event_id.team_ids
