@@ -63,7 +63,12 @@
 				<xpath expr="//sheet" position="before">
 				    <header>
 					<button string="Envoyer les courriels d'invitation" type="object" name="send_invit"/>
+					<button string="Verifier les dispos de tous" type="object" name="check_dispo"/>
+
 				    </header>
+				    <field name="name" position="after">
+					<field name="dispo_message" />
+				    </field>
 				</xpath>
 			</field>
 		</record>

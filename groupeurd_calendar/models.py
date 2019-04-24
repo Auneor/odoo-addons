@@ -68,6 +68,12 @@ class CalAtt(models.Model):
 class CalendarEvent(models.Model):
 	_inherit = 'calendar.event'
 
+        dispo_message=fields.Text("Dispos ok?",readonly=True)
+        
+        @api.multi
+        def check_dispo(self):
+                self.search([("start_datetime","<=",self.start_datetime)])
+                
         @api.multi
         def send_invit(self):
                 attendees=self.env["calendar.attendee"].search([("event_id","=",self.id)])
