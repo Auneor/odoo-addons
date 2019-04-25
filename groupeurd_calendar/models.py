@@ -82,7 +82,56 @@ class CalendarEvent(models.Model):
 
     @api.multi
     def check_dispo(self):
-        self.search([("start_datetime", "<=", self.start_datetime)])
+        message = ""
+        user_par_id = {}
+        com_pd = [
+            "&",
+            ("start_datetime", ">=", self.start_datetime),
+            ("start_datetime", "<=", self.stop_datetime),
+        ]
+        term_pd = [
+            "&",
+            ("stop_datetime", ">=", self.start_datetime),
+            ("stop_datetime", "<=", self.stop_datetime),
+        ]
+        englobe = [
+            "&",
+            ("start_datetime", "<=", self.start_datetime),
+            ("stop_datetime", ">=", self.stop_datetime),
+        ]
+        domain = ["|", "|"]
+        domain.extend(com_pd)
+        domain.extend(term_pd)
+        domain.extend(englobe)
+
+        res = self.env["calendar.event"].search(domain)
+        print(res)
+        cur_attendees = set(
+            [
+                at.partner_id.id
+                for at in self.env["calendar.attendee"].search(
+                    [("event_id", "=", self.id)]
+                )
+            ]
+        )
+
+        for ev in res:
+            if ev.id == self.id:
+                continue
+            atts = self.env["calendar.attendee"].search([("event_id", "=", ev.id)])
+            for at in atts:
+                user_par_id[at.partner_id.id] = at.partner_id.name
+            attendees = set([at.partner_id.id for at in atts])
+
+            #            print(cur_attendees, attendees)
+            inter = cur_attendees.intersection(attendees)
+            #           print(inter)
+            if inter:
+                st = ""
+                for a in inter:
+                    st += user_par_id[a] + ", "
+                message += "Conflit avec " + st + " et " + ev.name + "\n"
+        self.dispo_message = message
 
     @api.multi
     def send_invit(self):

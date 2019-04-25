@@ -66,10 +66,12 @@
 					<button string="Verifier les dispos de tous" type="object" name="check_dispo"/>
 
 				    </header>
-				    <field name="name" position="after">
-					<field name="dispo_message" />
-				    </field>
 				</xpath>
+					<xpath expr="//h2" position="after">
+					    <h5 style="color:red;">
+						<field name="dispo_message" />
+					    </h5>
+					</xpath>
 			</field>
 		</record>
 		
